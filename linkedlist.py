@@ -54,6 +54,29 @@ class LinkedList:
         new_node.next = current.next #New Node points to currents.next node
         current.next = new_node #Current Node points to new node
 
+    def get_at_position(self,position):
+        current = self.head
+        counter = 0
+        while counter < position:
+            current = current.next
+            counter += 1
+
+        return current.data
+    
+    def delete_at_position(self, position):
+        current = self.head
+        counter = 0
+        #Move to the node just infront of the node we want to remove
+        while counter < position - 1:
+            current = current.next
+            counter += 1
+
+        #Set the current nodes next, to the node we want to remove's next
+
+        current.next = current.next.next
+
+
+
 
 
 
@@ -72,4 +95,8 @@ songs.traverse()
 
 songs.insert_at_position(2,"Orange Blossoms")
 
+songs.traverse()
+print(songs.get_at_position(4))
+
+songs.delete_at_position(1)
 songs.traverse()
