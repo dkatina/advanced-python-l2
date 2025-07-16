@@ -72,8 +72,11 @@ class LinkedList:
             counter += 1
 
         #Set the current nodes next, to the node we want to remove's next
-
+        removing = current.next
         current.next = current.next.next
+        return removing
+
+
 
 
 
